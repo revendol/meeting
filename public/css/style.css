@@ -1,0 +1,71 @@
+/*This is my suitable class which is created by me*/
+.flexmid_column{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.flexmid_row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.bordered{
+    border: 1px solid ;
+}
+.floatright{
+    float: right;
+}
+.floatleft{
+    float: left;
+}
+.rowreverse{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.rowleft{
+    margin-left: -15px;
+}
+.rowright{
+    margin-right: -15px;
+}
+.rowreverseleft{
+    margin-left: 15px;
+}
+.rowreverseright{
+    margin-right: 15px;
+}
+.circle{
+    border-radius: 50%;
+}
+.bg-none{
+    background: none;
+}
+.mid-parent{
+    position: relative;
+}
+.mid-child{
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%,-50%);
+    min-width: 200px;
+    min-height: 30px;
+}
+.bolder{
+    font-weight: bolder;
+}
+/*End of my built in classes*/
+
+
+/*For any project write css from here*/
+
+.myTable{
+    user-select: none;
+}
+.selectedTD{
+    background: #F3F3F3;
+}
