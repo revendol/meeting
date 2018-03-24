@@ -81,27 +81,29 @@
                                 </tr>
                                 </tbody>
                             </table>
-                            {{--<p>Meeting allocted on {{ date('d M, Y') }}</p>--}}
-                            {{--<table class="table ">--}}
-                                {{--<thead>--}}
-                                {{--<tr>--}}
-                                    {{--<th>Time</th>--}}
-                                    {{--<th>Title</th>--}}
-                                    {{--<th>Description</th>--}}
-                                {{--</tr>--}}
-                                {{--</thead>--}}
-                                {{--<tbody>--}}
-                                {{--<tr>--}}
-                                    {{--<th scope="row">8.00am - 10.00am</th>--}}
-                                    {{--<td>{{ $room->name }}</td>--}}
-                                    {{--<td>{!! $room->name !!}</td>--}}
-                                {{--</tr>--}}
-                                {{--<tr>--}}
-                                    {{--<td colspan="3">No meeting to show yet</td>--}}
-                                {{--</tr>--}}
+                            <p>Meeting allocated on {{ date('d M, Y') }}</p>
+                            <table class="table ">
+                                <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Title</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($start as $key => $s)
+                                <tr>
+                                    <th scope="row">{{ $s['index'] }} - {{ $end[$key]['index'] }}</th>
+                                    <td>{{ $s['title'] }}</td>
+                                </tr>
+                                @endforeach
+                                @if(!count($start))
+                                    <tr>
+                                        <td colspan="3">No meeting to show yet</td>
+                                    </tr>
+                                @endif
 
-                                {{--</tbody>--}}
-                            {{--</table>--}}
+                                </tbody>
+                            </table>
                     </div>
                 </div>
             </div>

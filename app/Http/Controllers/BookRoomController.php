@@ -46,10 +46,17 @@ class BookRoomController extends Controller
         }
         $coulmns = [];
         $flag = 0;
+        if($to_hour == 0){
+            $to_hour = 24;
+        }
         for($h=$from_hour;$h<=$to_hour;$h++){
             $interval = $from_minute;
             for ($m=0;$m<2;$m++){
-                $coulmns[] = $h>12?'t_'.($h-12).$interval.'pm':'t_'.$h.$interval.'am';
+                if($h==12){
+                    $coulmns[] = 't_12'.$interval.'pm';
+                } else{
+                    $coulmns[] = $h>12?'t_'.($h-12).$interval.'pm':'t_'.$h.$interval.'am';
+                }
                 if($flag == 0 && $from_minute == 30){
                     $flag++;
                     break;
