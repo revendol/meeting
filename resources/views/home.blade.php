@@ -147,21 +147,27 @@
                                         @endforeach
                                     </tr>
                                     <tr>
-                                        <td>11:30 AM</td>
+                                        <td>11:00 AM</td>
                                         @foreach($rooms as $room)
                                             <td @if($room->t_1100am) title="{{$room->t_1100am}}" class="booked-room" onclick="description('{{$room->t_1100am}}','{{$room->description}}','{{ $room->place->name }}','{{ date('d M, Y',strtotime($room->meeting_date)) }}')" @endif></td>
                                         @endforeach
                                     </tr>
                                     <tr>
-                                        <td>12:00 PM</td>
+                                        <td>11:30 AM</td>
                                         @foreach($rooms as $room)
                                             <td @if($room->t_1130am) title="{{$room->t_1130am}}" class="booked-room" onclick="description('{{$room->t_1130am}}','{{$room->description}}','{{ $room->place->name }}','{{ date('d M, Y',strtotime($room->meeting_date)) }}')" @endif></td>
                                         @endforeach
                                     </tr>
                                     <tr>
+                                        <td>12:00 PM</td>
+                                        @foreach($rooms as $room)
+                                            <td @if($room->t_1200pm) title="{{$room->t_1200pm}}" class="booked-room" onclick="description('{{$room->t_1200pm}}','{{$room->description}}','{{ $room->place->name }}','{{ date('d M, Y',strtotime($room->meeting_date)) }}')" @endif></td>
+                                        @endforeach
+                                    </tr>
+                                    <tr>
                                         <td>12:30 PM</td>
                                         @foreach($rooms as $room)
-                                            <td @if($room->t_1200am) title="{{$room->t_1200am}}" class="booked-room" onclick="description('{{$room->t_1200am}}','{{$room->description}}','{{ $room->place->name }}','{{ date('d M, Y',strtotime($room->meeting_date)) }}')" @endif></td>
+                                            <td @if($room->t_1230pm) title="{{$room->t_1230pm}}" class="booked-room" onclick="description('{{$room->t_1230pm}}','{{$room->description}}','{{ $room->place->name }}','{{ date('d M, Y',strtotime($room->meeting_date)) }}')" @endif></td>
                                         @endforeach
                                     </tr>
                                     <tr>

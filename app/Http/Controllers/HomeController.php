@@ -33,8 +33,8 @@ class HomeController extends Controller
             $date = $_GET['date'];
             $place_status = Place::where('id',$_GET['place'])->first()->name;
         } else{
-            $rooms = Meeting::where('place_id','=',1)->get();
-            $place_status = $rooms[0]->place->name;
+            $rooms = Meeting::where('place_id','=',1)->where('meeting_date','=',date('Y-m-d'))->get();
+            $place_status = isset($rooms[0]->place->name)?$rooms[0]->place->name:'Dhaka';
         }
         $places = Place::all();
         return view('home',compact('rooms','date','places','place_status'));
